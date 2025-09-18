@@ -1,0 +1,40 @@
+.card{
+    background-color: rgb(147, 156, 159);
+    border-radius: 20px;
+    margin:20px;
+    padding: 10px;
+    box-shadow: 10px 5px 5px black;
+    width: 65%;
+    height: 350px;
+    text-align: center;
+    
+}
+img{
+    width:170px;
+    height:130px;
+    border-radius: 5px;
+    border: 1px solid black;
+    align-items: center
+
+}
+
+
+.card-title{
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+.card-price{
+    font-size: small;
+    font-family:'Courier New', Courier, monospace
+}
+.card-id{
+    font-size: small;
+    font-family:cursive
+}
+.card-author{
+    font-size: small;
+    font-family: cursive;
+}
+button{
+    background-color: green;
+    border-radius: 5px;
+}
