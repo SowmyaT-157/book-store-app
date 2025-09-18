@@ -1,0 +1,17 @@
+.search{
+    background-color: gray;
+    padding: 40px;
+    
+}
+input{
+    display: flex;
+    float: right;
+    padding: 10px;
+    width:250px;
+    margin-bottom: 20px;
+
+}
+.header{
+    float: right;
+    
+}
