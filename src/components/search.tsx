@@ -1,14 +1,19 @@
+
 import './search.css'
-const SearchBar = () => {
+type searchProps = {
+    search:string;
+    bookSearch:(event:React.ChangeEvent<HTMLInputElement>)=>void
+}
+const SearchBar = ({search,bookSearch}:searchProps) => {
     return(
-        <div className ="search">
-           <form>
-            <h1>Book Store</h1>
-            <input type="text"placeholder = "search"/>
-            <p className="header">Find your favourite book..14+ available books here </p>
-           </form>
+        <div>
+            <input 
+            type= "text"
+            placeholder='Search for books'
+            value={search}
+            onChange={bookSearch}
+            />
         </div>
-       
     )
 }
 export default SearchBar;
