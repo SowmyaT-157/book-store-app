@@ -1,46 +1,94 @@
-# Getting Started with Create React App
+## Book store App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Description
+- A simple product list application, it show a list of books.
+---
 
-In the project directory, you can run:
+##  Table of Contents
 
-### `npm start`
+- [Book store app](#book-store-app)
+- [Description](#description)
+- [Table of Contents](#table-of-contents)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation \& setup](#installation--setup)
+    - [Clone:](#clone)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
+## Features
+- It display the book lists 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+##  Tech Stack
 
-### `npm test`
+- Node Js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- TypeScript
 
-### `npm run build`
+- React 
+ 
+---
+## Installation & setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. To clone the project enter the below command in the terminal with the path you want to create your project folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Clone:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- https://github.com/SowmyaT-157/book-store-app
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- To Install Node.js click the below link
+       [Node.js](https://nodejs.org/)
+- To check the Node.js
+    - node -v
+    - It will display the version of the node
+- Navigate to project directory.
+  
+    - `cd` project path
+  
+- To create initial project setup 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ ``` bash
+    npx create-react-app book-store --template typescript
+ ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- The default port 3000, if you want change the port
+   * navigate to the package.json and change the script.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+       * "start": "PORT=3005 react-scripts start"
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. To start the project use the below command in the terminal.
+* To run the application file
+```bash
+    npm run start
+```
+* After navigate browser it show the application.
+    * localhost:3005
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+## Contributing
+1.Fork the repository
+
+2.Create a new branch (git checkout -b feature-branch).
+
+3.Make your changes and commit them (git commit -m "Add new feature").
+
+4.Push to the branch (git push origin feature-branch).
+
+5.Create a pull request.
+
+---
+
+## Contact
+
+- For any issues or queries ,contact Sowmya T_157
+
+  - https://github.com/SowmyaT-157
+
+---
+
+
