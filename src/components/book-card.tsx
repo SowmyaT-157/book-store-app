@@ -1,24 +1,29 @@
 import React from "react";
-import { CardProps } from "../types/prop-type";
+// import { CardProps } from "../types/prop-type";
 import './book-card.css';
-type BookCardProps = {
-    booksdata: CardProps;
-}
+// type BookCardProps = {
+//     filterBook: CardProps[];
+// }
 
-const BookCard = ({booksdata} : BookCardProps) => {
+const BookCard = ({filterBook} : any) => {
   return (
-    <div className="card">
-      <div className="card-body">
-        <img src={booksdata.bookImage} alt="book-image" />
-        <h5 className ="card-id">Book Id : {booksdata.id}</h5>
-        <h5 className="card-title">Title: {booksdata.bookName}</h5>
-        <p className="card-price">Price:₹ {booksdata.price}</p>
-        <p className="card-author">Author: {booksdata.author}</p>
-        <button>Add to cart</button>
+    <div>
+        {filterBook.length ===0 ? (
+           <p> sorry.. no book found </p>
+        ):(filterBook.map((book:any)=>(
+        <div className="card">
+            <div className="card-body">
+            <img src={book.bookImage} alt="book-image" />
+            <h5 className ="card-id">Book Id : {book.id}</h5>
+            <h5 className="card-title">Title: {book.bookName}</h5>
+            <p className="card-price">Price:₹ {book.price}</p>
+            <p className="card-author">Author: {book.author}</p>
+            <button>Add to cart</button></div>
+           </div>
+        )))}
       </div>
-    </div>
+    
   );
 }
-
 export default BookCard;
 
