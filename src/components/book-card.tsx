@@ -1,29 +1,39 @@
-import React from "react";
-// import { CardProps } from "../types/prop-type";
-import './book-card.css';
-// type BookCardProps = {
-//     filterBook: CardProps[];
-// }
+import React, { useState } from "react";
+import { cardItemType } from "../types/prop-type";
 
-const BookCard = ({filterBook} : any) => {
+import './book-card.css';
+type BookCardProps = {
+    book: cardItemType;
+    addToCart:(book:cardItemType)=>void;
+    removeFromCart:(Id:number)=>void;
+    isInCart:(Id:number)=>boolean;
+}
+
+
+export function BookCard({ book, addToCart,removeFromCart,isInCart}: BookCardProps) {
+  const [isAdded, setIsAdded] = useState(isInCart(book.id));
+  const handleButtonClick = () => {
+    if (isAdded) {
+      removeFromCart(book.id);
+      setIsAdded(false)
+    } else {
+      addToCart(book);
+    }
+    setIsAdded(!isAdded);
+  };
   return (
-    <div>
-        {filterBook.length ===0 ? (
-           <p> sorry.. no book found </p>
-        ):(filterBook.map((book:any)=>(
-        <div className="card">
-            <div className="card-body">
-            <img src={book.bookImage} alt="book-image" />
-            <h5 className ="card-id">Book Id : {book.id}</h5>
-            <h5 className="card-title">Title: {book.bookName}</h5>
-            <p className="card-price">Price:₹ {book.price}</p>
-            <p className="card-author">Author: {book.author}</p>
-            <button>Add to cart</button></div>
-           </div>
-        )))}
+    <div className="card">
+      <div className="card-image">
+        <img src={book.bookImage} alt={book.bookName} />
       </div>
-    
+      <div className="card-content">
+        <h2 className="title">{book.bookName}</h2>
+        <p className="price">Price: <span>{book.price}</span></p>
+        <p className="discount">Author: <span>{book.author}</span></p>
+      </div>
+      <button onClick={handleButtonClick}>{isAdded ? "REMOVE FROM CART" : "ADD TO CART"}</button>
+    </div>
   );
 }
-export default BookCard;
+
 
