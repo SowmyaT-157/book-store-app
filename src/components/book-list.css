@@ -1,9 +1,4 @@
- .book-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
- }
-
+ 
  .container {
     padding: 24px;
     max-width: 1200px;
@@ -14,14 +9,14 @@
     font-family:cursive;
     text-align: center;
  }
- .cart-sidebar{
+ /* .cart-sidebar{ */
    /* background-color: aqua; 
    height: 50%;
    width:30%;
    padding:10px;
    display: flex;
    float: right; */
-  flex: 1;
+  /* flex: 1;
   background-color: #F0F0F0;
   display: block;
   padding: 20px;
@@ -31,7 +26,7 @@
   border-radius: 0;
   border: none;
   box-shadow: none; 
- } 
- .summary{
+ }  */
+ /* .summary{
    display: flexbox;
- }
+ } */
