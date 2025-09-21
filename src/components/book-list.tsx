@@ -20,7 +20,7 @@ const BookData = () => {
 
   return(
     <>
-    <div className='summary'>
+    <div>
         <SearchBar books={cards}/>
     </div>
     </>
