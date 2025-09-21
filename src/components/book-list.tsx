@@ -3,8 +3,6 @@ import './book-list.css'
 import { cardItemType } from '../types/prop-type';
 import SearchBar from './search';
 
-
-
 const BookData = () => {
   const [cards, setCards] = useState<cardItemType[]>([])
   const fetchData = async() => {
@@ -19,12 +17,9 @@ const BookData = () => {
 
   return(
     <>
-  
     <div>
-        
         <SearchBar books={cards}/>
     </div>
-     
     </>
    );
   }
