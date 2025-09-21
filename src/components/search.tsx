@@ -64,7 +64,10 @@ export const SearchBar = ({ books }: searchProps) => {
   );
   return (
     <>
+      
       <div className="search">
+        <h2 className="title">Book Store📚</h2>
+        <p className="para">Find your favourite book📚</p>
         <input
           type="text"
           placeholder="Search for books"
@@ -72,24 +75,24 @@ export const SearchBar = ({ books }: searchProps) => {
           onChange={bookSearch}
         />
       </div>
-      <div>
-        <div className="main">
-      <div className="book-list">{filterBook.map((book) => (
-        <BookCard
-          book={book}
-          addToCart={handleAddToCart}
-          removeFromCart={removeFromCart}
-          // isInCart={isInCart}
-          cart={cart}
-        />
-      ))}
-       <div className="display-cart"><Cart cart={cart}
-          removeFromCart={removeFromCart}
-          incrementQuantity={incrementQuantity}
-          decrementQuantity={decrementQuantity}
-      /></div></div>
+     
+      <div className="main">
+        <div className="book-list"> {filterBook.map((book) => (
+          <BookCard
+            book={book}
+            addToCart={handleAddToCart}
+            removeFromCart={removeFromCart}
+            // isInCart={isInCart}
+            cart={cart}
+          />
+        ))}
+        <div className="display-cart"><Cart cart={cart}
+            removeFromCart={removeFromCart}
+            incrementQuantity={incrementQuantity}
+            decrementQuantity={decrementQuantity}
+        /></div></div>
       </div>
-      </div>
+     
     </>
   );
 };
