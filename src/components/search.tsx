@@ -35,7 +35,7 @@ export const SearchBar = ({ books }: searchProps) => {
   };
   const removeFromCart = (bookId: number) => {
     setCart((previousCart) =>
-      previousCart.filter((books) => books.id !== bookId),
+      previousCart.filter((books) => books.id !== bookId)
     );
   };
   const incrementQuantity = (bookId: number) => {
@@ -47,9 +47,9 @@ export const SearchBar = ({ books }: searchProps) => {
             previousCart.map(books => books.id === bookId ? { ...books, quantity: books.quantity - 1 } : books).filter(books => books.quantity > 0)
         );
     };
-  const isInCart = (bookId: number): boolean => {
-    return cart.some((book) => book.id === bookId);
-  };
+  // const isInCart = (bookId: number): boolean => {
+  //   return cart.some((book) => book.id === bookId);
+  // };
 
   const bookSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -73,12 +73,14 @@ export const SearchBar = ({ books }: searchProps) => {
         />
       </div>
       <div>
+        <div className="main">
       <div className="book-list">{filterBook.map((book) => (
         <BookCard
           book={book}
           addToCart={handleAddToCart}
           removeFromCart={removeFromCart}
-          isInCart={isInCart}
+          // isInCart={isInCart}
+          cart={cart}
         />
       ))}
        <div className="display-cart"><Cart cart={cart}
@@ -86,6 +88,7 @@ export const SearchBar = ({ books }: searchProps) => {
           incrementQuantity={incrementQuantity}
           decrementQuantity={decrementQuantity}
       /></div></div>
+      </div>
       </div>
     </>
   );
