@@ -3,12 +3,12 @@
 ---
 
 ## Description
-- A simple product list application, it show a list of books.
+- A simple book store application, it display a list of books, and it has a search option we can easily recognize the book.If we can add book into care it has a increment and decrement option, easily increase the quantity.It calculate the total books prices and shipping charges also add display a order summary.
 ---
 
 ##  Table of Contents
 
-- [Book store app](#book-store-app)
+- [Book store App](#book-store-app)
 - [Description](#description)
 - [Table of Contents](#table-of-contents)
 - [Features](#features)
@@ -20,7 +20,11 @@
 
 ---
 ## Features
-- It display the book lists 
+- It is book store application, it display list of available books by using API fetched data and useState hook.
+- It has a search option, we can easily filter the book and easily recognize.
+- The book card have a `ADD TO CART` button, if user add that book that text will change into `REMOVE FROM CART`. based on that colors will be changed for easy recognize.
+- After user add the books into cart, cart has a quantity increase`+` , deecrease `-` ,and `remove` buttons are there, if user don't need that book user can remove that book in cart.
+- User add the books into cart automatically generate a total bill summary, it has a book price, and shipping charges. 
 
 ##  Tech Stack
 
@@ -38,7 +42,6 @@
 #### Clone:
 
 - https://github.com/SowmyaT-157/book-store-app
-
 
 - To Install Node.js click the below link
        [Node.js](https://nodejs.org/)
