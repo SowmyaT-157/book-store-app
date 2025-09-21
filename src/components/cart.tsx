@@ -21,8 +21,8 @@ export const Cart: React.FC<CartProps> = ({
   
   return (
     <div className="cart-list" id="right">
-      <h2>Your Cart  books</h2>
-      <h3>🛒{cart.length}</h3>
+      <div className='icon'><h1>Your Cart </h1>
+      <div><h3>🛒{cart.length}</h3></div></div>
       {cart.length === 0 ? (
         <p>Cart is empty...choose a book</p>
       ) : (
@@ -32,26 +32,27 @@ export const Cart: React.FC<CartProps> = ({
               <img src={book.bookImage} alt={book.bookName} className="cart-image" />
             </div>
             <div className='cart-display'>
-            <div className="cart-book-details">
-              <p><strong>{book.bookName}</strong></p>
-              <p>Author: {book.author}</p>
-              <p>Price: ${book.price}</p>
-              <p>Quantity: {book.quantity}</p>
-              <div className="cart-buttons">
-                <button onClick={() => incrementQuantity(book.id)}>+</button>
-                <button onClick={() => decrementQuantity(book.id)}>-</button>
-                <button onClick={() => removeFromCart(book.id)}>Remove</button>
+              <div className="cart-book-details">
+                <p><strong>{book.bookName}</strong></p>
+                <p>Author: {book.author}</p>
+                <p>Price: ${book.price}</p>
+                <p>Quantity: {book.quantity}</p>
+                <div className="cart-buttons">
+                  <button onClick={() => incrementQuantity(book.id)}>+</button>
+                  <button onClick={() => decrementQuantity(book.id)}>-</button>
+                  <button onClick={() => removeFromCart(book.id)}>Remove</button>
+                </div>
               </div>
             </div>
-            </div>
+            
           </div>
         ))
       )}
       <div className='cart-summary'>
         <h3>Order Summary</h3>
-        <p>subtotal: {subtotal.toFixed(2)}</p>
-        <p>shipping: {shipping.toFixed(2)}</p>
-        <p>total: {total.toFixed(2)}</p>
+        <p>Subtotal: {subtotal.toFixed(2)}</p>
+        <p>Shipping: {shipping.toFixed(2)}</p>
+        <p>Total: {total.toFixed(2)}</p>
       </div>
     </div>
   );
