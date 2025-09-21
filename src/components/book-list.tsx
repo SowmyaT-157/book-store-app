@@ -1,5 +1,4 @@
 import  { useState, useEffect } from 'react';
-
 import './book-list.css'
 import { cardItemType } from '../types/prop-type';
 import SearchBar from './search';
@@ -20,9 +19,12 @@ const BookData = () => {
 
   return(
     <>
+  
     <div>
+        
         <SearchBar books={cards}/>
     </div>
+     
     </>
    );
   }
