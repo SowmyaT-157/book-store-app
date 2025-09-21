@@ -14,9 +14,15 @@ export const Cart: React.FC<CartProps> = ({
   decrementQuantity,
   removeFromCart
 }) => {
+
+  const subtotal = cart.reduce((sum, book) => sum + book.price * book.quantity, 0);
+  const shipping = cart.length > 0 ? 80 : 0;
+  const total = subtotal + shipping;
+  
   return (
     <div className="cart-list" id="right">
       <h2>Your Cart  books</h2>
+      <h3>🛒{cart.length}</h3>
       {cart.length === 0 ? (
         <p>Cart is empty...choose a book</p>
       ) : (
@@ -32,15 +38,21 @@ export const Cart: React.FC<CartProps> = ({
               <p>Price: ${book.price}</p>
               <p>Quantity: {book.quantity}</p>
               <div className="cart-buttons">
-                <div className="inc"><button id="but" onClick={() => incrementQuantity(book.id)}>+</button></div>
-                <div className="dec"><button id="but" onClick={() => decrementQuantity(book.id)}>-</button></div>
-                <div className="rem"><button id="but" onClick={() => removeFromCart(book.id)}>Remove</button></div>
+                <button onClick={() => incrementQuantity(book.id)}>+</button>
+                <button onClick={() => decrementQuantity(book.id)}>-</button>
+                <button onClick={() => removeFromCart(book.id)}>Remove</button>
               </div>
             </div>
             </div>
           </div>
         ))
       )}
+      <div className='cart-summary'>
+        <h3>Order Summary</h3>
+        <p>subtotal: {subtotal.toFixed(2)}</p>
+        <p>shipping: {shipping.toFixed(2)}</p>
+        <p>total: {total.toFixed(2)}</p>
+      </div>
     </div>
   );
 };
