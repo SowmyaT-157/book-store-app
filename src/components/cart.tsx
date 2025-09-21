@@ -35,7 +35,7 @@ export const Cart: React.FC<CartProps> = ({
               <div className="cart-book-details">
                 <p><strong>{book.bookName}</strong></p>
                 <p>Author: {book.author}</p>
-                <p>Price: ${book.price}</p>
+                <p>Price₹: {book.price}</p>
                 <p>Quantity: {book.quantity}</p>
                 <div className="cart-buttons">
                   <button onClick={() => incrementQuantity(book.id)}>+</button>
@@ -49,9 +49,9 @@ export const Cart: React.FC<CartProps> = ({
       )}
       <div className='cart-summary'>
         <h3>Order Summary</h3>
-        <p>Subtotal: {subtotal.toFixed(2)}</p>
-        <p>Shipping: {shipping.toFixed(2)}</p>
-        <p>Total: {total.toFixed(2)}</p>
+        <p>Subtotal	₹: {subtotal.toFixed(2)}</p>
+        <p>Shipping	₹: {shipping.toFixed(2)}</p>
+        <p>Total	₹: {total.toFixed(2)}</p>
       </div>
     </div>
   );
