@@ -10,3 +10,21 @@ input{
     width:250px;
 
 }
+/* .cart{
+    background-color: aqua;
+    width:30%;
+    display:flex;
+    float:right;
+    top: -50%;
+    
+} */
+.book-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+.display-cart{
+   background-color: antiquewhite;
+   display: flex;
+   /* flex-direction: column; */
+}
