@@ -5,36 +5,51 @@
 }
 input{
     display: flex;
-    float: right;
+    /* float: right; */
     padding: 10px;
     width:250px;
-
 }
-/* .cart{
+.cart{
     background-color: aqua;
     width:30%;
     display:flex;
     float:right;
     top: -50%;
     
-} */
-.book-list{
+}
+/* .book-list{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 15px;
-     justify-content: space-between;
-   align-items: flex-start;
-}
-.display-cart{
+    justify-content: space-between;
+    align-items: flex-start
+} */
+/* .display-cart{
    background-color: antiquewhite;
-   display: flex;
-  
-   /* flex-direction: column; */
-}
+   display: block;
+   
+} */
 
 .main {
+    display: flex;
     justify-content: space-between;
     padding: 2rem;
     gap: 10px;
     align-items: flex-start;
+}
+/* .para{
+    display:block;
+    float: right;
+} */
+.head{
+    color: rgb(62, 47, 28);
+    text-align: center;
+    font-family: cursive;
+    margin:50%
+
+}
+.title{
+    color: rgb(69, 47, 19);
+    font-family: cursive;
+    float: right;
 }
