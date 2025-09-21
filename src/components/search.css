@@ -5,42 +5,25 @@
 }
 input{
     display: flex;
-    /* float: right; */
     padding: 10px;
     width:250px;
 }
 .cart{
     background-color: aqua;
-    width:30%;
+    width:40%;
     display:flex;
     float:right;
     top: -50%;
     
 }
-/* .book-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
-    justify-content: space-between;
-    align-items: flex-start
-} */
-/* .display-cart{
-   background-color: antiquewhite;
-   display: block;
-   
-} */
 
 .main {
     display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     justify-content: space-between;
-    padding: 2rem;
-    gap: 10px;
     align-items: flex-start;
 }
-/* .para{
-    display:block;
-    float: right;
-} */
+
 .head{
     color: rgb(62, 47, 28);
     text-align: center;
@@ -52,4 +35,16 @@ input{
     color: rgb(69, 47, 19);
     font-family: cursive;
     float: right;
+}
+.your-cart-space{
+    display: flex;
+    float: right;
+    width:30% ;
+
+}
+.card-place{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
 }
