@@ -72,20 +72,21 @@ export const SearchBar = ({ books }: searchProps) => {
           onChange={bookSearch}
         />
       </div>
-      <div className="list">{filterBook.map((book) => (
+      <div>
+      <div className="book-list">{filterBook.map((book) => (
         <BookCard
           book={book}
           addToCart={handleAddToCart}
           removeFromCart={removeFromCart}
           isInCart={isInCart}
         />
-      ))}</div>
-      <div className="cart"><Cart cart={cart}
+      ))}
+       <div className="display-cart"><Cart cart={cart}
           removeFromCart={removeFromCart}
           incrementQuantity={incrementQuantity}
           decrementQuantity={decrementQuantity}
-      /></div>
-      
+      /></div></div>
+      </div>
     </>
   );
 };
