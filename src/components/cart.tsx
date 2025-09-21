@@ -20,7 +20,7 @@ export const Cart: React.FC<CartProps> = ({
   const total = subtotal + shipping;
   
   return (
-    <div className="cart-list" id="right">
+    <div className="cart-list">
       <div className='icon'><h1>Your Cart </h1>
       <div><h3>🛒{cart.length}</h3></div></div>
       {cart.length === 0 ? (
@@ -28,10 +28,10 @@ export const Cart: React.FC<CartProps> = ({
       ) : (
         cart.map((book) => (
           <div className="cart-book" key={book.id}>
-            <div className="cart-book-image">
-              <img src={book.bookImage} alt={book.bookName} className="cart-image" />
+            <div>
+              <img src={book.bookImage} alt={book.bookName} />
             </div>
-            <div className='cart-display'>
+            <div>
               <div className="cart-book-details">
                 <p><strong>{book.bookName}</strong></p>
                 <p>Author: {book.author}</p>
@@ -44,7 +44,6 @@ export const Cart: React.FC<CartProps> = ({
                 </div>
               </div>
             </div>
-            
           </div>
         ))
       )}
