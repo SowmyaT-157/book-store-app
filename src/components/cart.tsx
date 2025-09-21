@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { cardItemType } from '../types/prop-type';
+import './cart.css'
 export type  CartProps = {
   cart: cardItemType[];
   incrementQuantity: (bookId: number) => void;
@@ -17,23 +18,25 @@ export const Cart: React.FC<CartProps> = ({
     <div className="cart-list" id="right">
       <h2>Your Cart  books</h2>
       {cart.length === 0 ? (
-        <p>Cart is empty.</p>
+        <p>Cart is empty...choose a book</p>
       ) : (
         cart.map((book) => (
-          <div className="cart-item" key={book.id}>
-            <div className="cart-books right">
+          <div className="cart-book" key={book.id}>
+            <div className="cart-book-image">
               <img src={book.bookImage} alt={book.bookName} className="cart-image" />
             </div>
-            <div className="cart-details left">
+            <div className='cart-display'>
+            <div className="cart-book-details">
               <p><strong>{book.bookName}</strong></p>
               <p>Author: {book.author}</p>
               <p>Price: ${book.price}</p>
               <p>Quantity: {book.quantity}</p>
               <div className="cart-buttons">
-                <div className="but1"><button id="but" onClick={() => incrementQuantity(book.id)}>+</button></div>
-                <div className="but2"><button id="but" onClick={() => decrementQuantity(book.id)}>-</button></div>
-                <div className="but3"><button id="but" onClick={() => removeFromCart(book.id)}>Remove</button></div>
+                <div className="inc"><button id="but" onClick={() => incrementQuantity(book.id)}>+</button></div>
+                <div className="dec"><button id="but" onClick={() => decrementQuantity(book.id)}>-</button></div>
+                <div className="rem"><button id="but" onClick={() => removeFromCart(book.id)}>Remove</button></div>
               </div>
+            </div>
             </div>
           </div>
         ))
