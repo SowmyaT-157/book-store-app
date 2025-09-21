@@ -1,20 +1,14 @@
-.inc{
-    background-color: gray;
-    border-radius: 3px;
-    
-}
-.dec{
-    background-color:whitesmoke;
-    border-radius: 3px;
-}
-.rem{
-    background-color: gray;
-    border-radius: 3px;
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .cart-buttons{
     display: flex;
     gap: 10px;
+    border-radius: 10px;
 }
+
 .cart-book{
     display: flex;
     margin: 30px;
