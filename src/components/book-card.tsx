@@ -23,14 +23,15 @@ export function BookCard({ book, addToCart,removeFromCart,isInCart}: BookCardPro
   };
   return (
     <div className="card">
-      <div className="card-image">
+      <div>
         <img src={book.bookImage} alt={book.bookName} />
       </div>
-      <div className="card-content">
-        <h2 className="title">{book.bookName}</h2>
-        <p className="price">Price: <span>{book.price}</span></p>
-        <p className="discount">Author: <span>{book.author}</span></p>
+      <div>
+        <h2 className="card-title">{book.bookName}</h2>
+        <p className="card-price">Price: <span>{book.price}</span></p>
+        <p className="card-author">Author: <span>{book.author}</span></p>
       </div>
+      <span></span>
       <button onClick={handleButtonClick}>{isAdded ? "REMOVE FROM CART" : "ADD TO CART"}</button>
     </div>
   );
