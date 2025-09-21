@@ -26,7 +26,7 @@ export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps)
       </div>
       <div>
         <h2 className="card-title">{book.bookName}</h2>
-        <p className="card-price">Price: <span>{book.price}</span></p>
+        <p className="card-price">Price	₹: <span>{book.price}</span></p>
         <p className="card-author">Author: <span>{book.author}</span></p>
       </div>
       <button onClick={handleButtonClick} className={`cart-button-color ${isAdded ? "remove" : "add"}`}>
