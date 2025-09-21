@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { cardItemType } from "../types/prop-type";
 
 import './book-card.css';
@@ -6,20 +5,25 @@ type BookCardProps = {
     book: cardItemType;
     addToCart:(book:cardItemType)=>void;
     removeFromCart:(Id:number)=>void;
-    isInCart:(Id:number)=>boolean;
+    // isInCart:(Id:number)=>boolean;
+    cart: cardItemType[];
 }
 
 
-export function BookCard({ book, addToCart,removeFromCart,isInCart}: BookCardProps) {
-  const [isAdded, setIsAdded] = useState(isInCart(book.id));
+export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps) {
+  
+  // const [isAdded, setIsAdded] = useState(isInCart(book.id)); 
+  const isAdded = cart.some(bookInCart => bookInCart.id === book.id )
+
+   
   const handleButtonClick = () => {
     if (isAdded) {
       removeFromCart(book.id);
-      setIsAdded(false)
+      // setIsAdded(false)
     } else {
       addToCart(book);
     }
-    setIsAdded(!isAdded);
+    // setIsAdded(!isAdded);
   };
   return (
     <div className="card">
@@ -31,9 +35,10 @@ export function BookCard({ book, addToCart,removeFromCart,isInCart}: BookCardPro
         <p className="card-price">Price: <span>{book.price}</span></p>
         <p className="card-author">Author: <span>{book.author}</span></p>
       </div>
-      <span></span>
-      <button onClick={handleButtonClick}>{isAdded ? "REMOVE FROM CART" : "ADD TO CART"}</button>
-    </div>
+      <button onClick={handleButtonClick} className={`cart-button-color ${isAdded ? "remove" : "add"}`}>
+         {isAdded ? "REMOVE FROM CART" : "ADD TO CART"}
+      </button> 
+      </div>
   );
 }
 
