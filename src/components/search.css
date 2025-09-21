@@ -22,9 +22,19 @@ input{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 15px;
+     justify-content: space-between;
+   align-items: flex-start;
 }
 .display-cart{
    background-color: antiquewhite;
    display: flex;
+  
    /* flex-direction: column; */
+}
+
+.main {
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 10px;
+    align-items: flex-start;
 }
