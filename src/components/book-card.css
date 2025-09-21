@@ -18,7 +18,6 @@ img{
 
 }
 
-
 .card-title{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: small;
@@ -35,7 +34,16 @@ img{
     font-size: small;
     font-family: cursive;
 }
-button{
-    background-color: green;
-    border-radius: 5px;
+
+.cart-button-color {
+   border-radius: 10px;
 }
+
+.remove {
+    background-color: red;
+}
+
+.add {
+    background-color: green;
+}
+
