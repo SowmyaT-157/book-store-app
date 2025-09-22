@@ -6,18 +6,18 @@ import { Cart } from "./cart";
 type searchProps = {
   books: cardItemType[];
 };
-type CartType = {
-  id: number;
-  bookName: string;
-  price: number;
-  author: string;
-  bookImage: string;
-  quantity: number;
-};
+// type CartType = {
+//   id: number;
+//   bookName: string;
+//   price: number;
+//   author: string;
+//   bookImage: string;
+//   quantity: number;
+// };
 
 export const SearchBar = ({ books }: searchProps) => {
   const [search, setSearch] = useState("");
-  const [cart, setCart] = useState<CartType[]>([]);
+  const [cart, setCart] = useState<cardItemType[]>([]);
 
   const handleAddToCart = (book: cardItemType) => {
     setCart((previousCart) => {
