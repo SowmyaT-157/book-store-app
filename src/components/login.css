@@ -1,0 +1,35 @@
+form{
+    background-color: gray;
+    display:grid;
+    padding:20px;
+    width:30%;
+    height:60%;
+    
+
+
+}
+input{
+    padding: 10px;
+    border-radius:5px;
+    
+}
+button{
+    padding:8px;
+    border-radius: 8px;
+    width:80px;
+    margin-right: 50%;
+}
+label{
+    font-family: cursive;
+}
+.button-position{
+   align-items: center;
+}
+.new-account{
+    display: flex;
+    justify-content: space-around;
+}
+.login-page{
+   display: flex;
+   align-items: center;
+}
