@@ -33,3 +33,7 @@ label{
    display: flex;
    align-items: center;
 }
+h3{
+    font-family: cursive;
+    text-align: center;
+}
