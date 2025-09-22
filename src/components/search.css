@@ -1,0 +1,50 @@
+.search{
+    background-color: gray;
+    padding: 40px;
+    
+}
+input{
+    display: flex;
+    padding: 10px;
+    width:250px;
+}
+.cart{
+    background-color: aqua;
+    width:40%;
+    display:flex;
+    float:right;
+    top: -50%;
+    
+}
+
+.main {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.head{
+    color: rgb(62, 47, 28);
+    text-align: center;
+    font-family: cursive;
+    margin:50%
+
+}
+.title{
+    color: rgb(69, 47, 19);
+    font-family: cursive;
+    float: right;
+}
+.your-cart-space{
+    display: flex;
+    float: right;
+    width:30% ;
+
+}
+.card-place{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+}
