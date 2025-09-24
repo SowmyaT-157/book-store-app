@@ -9,9 +9,7 @@ const Wishlist: React.FC = () => {
   const { cart, handleAddToCart, removeFromCart } = useCart();
     const { users } = useAuth();
     console.log(users)
-    // if (!users) {
-    //   return <p>Please log in to view your wishlist.</p>;
-    // }
+  
   return (
     <div>
        <div className="wishlist-page">
@@ -24,7 +22,7 @@ const Wishlist: React.FC = () => {
             </div>
           )}
         </div>
-         <div className="wishlist-grid">
+        <div className="wishlist-grid">
           {wishlist.length === 0 ? (
             <p>No books in wishlist</p>
           ) : (
@@ -35,9 +33,9 @@ const Wishlist: React.FC = () => {
                   <div className="list-inside"><img src={book.bookImage} alt={book.bookName} /></div>
                   <div>
                   <h4>{book.bookName}</h4>
-                  <p className="author">{book.author}</p>
-                  <p className="price">₹{book.price}</p>
-                  <div className="card-actions">
+                  <p>{book.author}</p>
+                  <p>₹{book.price}</p>
+                  <div>
                     <button
                       onClick={() =>
                         inCart ? removeFromCart(book.id) : handleAddToCart(book)
