@@ -14,8 +14,6 @@ type BookCardProps = {
 
 export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps) {
   const {addToWishlist} = useWishlist()
-  
-
   const isAdded = cart.some(bookInCart => bookInCart.id === book.id )
   const handleButtonClick = () => {
     if (isAdded) {
@@ -37,7 +35,7 @@ export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps)
       <button onClick={handleButtonClick} className={`cart-button-color ${isAdded ? "remove" : "add"}`}>
          {isAdded ? "REMOVE FROM CART" : "ADD TO CART"}
       </button> 
-      <button onClick={()=>addToWishlist}>WishList</button>
+      <button onClick={()=>addToWishlist(book)}>WishList</button>
       </div>
   );
 }
