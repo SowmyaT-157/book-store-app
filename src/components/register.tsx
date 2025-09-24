@@ -55,7 +55,7 @@ export const SignUp = () => {
             <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
             <label>Confirm Password:</label>
             <input type="password" placeholder="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}/>
-            <button className="register-button"onClick={handleRegister}>Login</button>
+            <button className="register-button"onClick={handleRegister}>Sign Up</button>
              {error && <p className="error-text">{error}</p>}
             <p>Already have an account <a href="/login">SignIn</a></p>
              
