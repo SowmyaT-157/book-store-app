@@ -4,6 +4,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import {users} from './staticData';
 import {useNavigate} from 'react-router-dom';
+import { useAuth } from './userAuthentication';
 
 
 export const Login = () => {
@@ -11,7 +12,7 @@ export const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    
+    const {login} = useAuth()
 
     useEffect(() => {
     console.log('Login Component rendered');
@@ -21,6 +22,7 @@ export const Login = () => {
         console.log(' Login attempt with:', { email, password });
         const user = users.find(user => user.email === email && user.password === password);
         if (user) {
+        login(user);
         console.log('Login successful..',user.name);
         localStorage.setItem('loggedInUser', JSON.stringify(user));
         navigate('/book-store');
@@ -29,7 +31,6 @@ export const Login = () => {
         setError('Invalid email or password');
         }
     };
-
 
     return(
     <div className='main'>
