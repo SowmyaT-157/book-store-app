@@ -6,7 +6,7 @@ import SearchBar from './search';
 const BookData = () => {
   const [cards, setCards] = useState<cardItemType[]>([])
   const fetchData = async() => {
-    let a = await fetch('https://mocki.io/v1/8348d43c-fcc4-43fe-86e1-22fdfe363f9d')
+    let a = await fetch('  https://68ca8400430c4476c349caf6.mockapi.io/books/Books')
     let data = await a.json()
     setCards(data)
     console.log(data)
