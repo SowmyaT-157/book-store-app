@@ -8,13 +8,17 @@ export interface CartContextProps {
   incrementQuantity : (bookId: number) =>void;
   decrementQuantity : (bookId: number) => void;
   handleAddToCart: (book: cardItemType) => void;
+  cards:cardItemType[];
+  setCards:Function
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<cardItemType[]>([]);
-  
+  const [cards, setCards] = useState<cardItemType[]>([])
+
+
 const handleAddToCart = (book: cardItemType) => {
     setCart((previousCart) => {
       const existingBook = previousCart.find((books) => books.id === book.id);
@@ -29,26 +33,34 @@ const handleAddToCart = (book: cardItemType) => {
       return [...previousCart, { ...book, quantity: 1 }];
     });
   };
-   const removeFromCart = (bookId: number) => {
+
+
+  const removeFromCart = (bookId: number) => {
     setCart((previousCart) =>
       previousCart.filter((books) => books.id !== bookId)
     );
   };
+
+
   const incrementQuantity = (bookId: number) => {
         setCart(previousCart => previousCart.map(books => books.id === bookId ? { ...books, quantity: books.quantity + 1 } : books)
         );
     };
-    const decrementQuantity = (bookId: number) => {
+
+
+  const decrementQuantity = (bookId: number) => {
         setCart(previousCart =>
             previousCart.map(books => books.id === bookId ? { ...books, quantity: books.quantity - 1 } : books).filter(books => books.quantity > 0)
         );
     };
+
   return (
-      <CartContext.Provider value={{ cart,handleAddToCart,removeFromCart, incrementQuantity,decrementQuantity  }}>
+      <CartContext.Provider value={{ cart,handleAddToCart,removeFromCart, incrementQuantity,decrementQuantity,cards,setCards  }}>
         {children}
       </CartContext.Provider>
     );
   };
+  
   export const useCart = (): CartContextProps => {
     const context = useContext(CartContext);
     if (!context) {
