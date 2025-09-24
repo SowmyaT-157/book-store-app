@@ -11,6 +11,7 @@ export const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    
 
     useEffect(() => {
     console.log('Login Component rendered');
@@ -28,6 +29,7 @@ export const Login = () => {
         setError('Invalid email or password');
         }
     };
+
 
     return(
     <div className='main'>
