@@ -1,11 +1,14 @@
 
 import React, { createContext, useContext, useState } from "react";
 import { cardItemType } from "../types/prop-type";
+
 type WishlistContextType = {
   wishlist: cardItemType[];
   addToWishlist: (book: cardItemType) => void;
   removeFromWishlist: (id: string) => void;
 };
+
+
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
 export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [wishlist, setWishlist] = useState<cardItemType[]>([]);
@@ -24,13 +27,13 @@ export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     </WishlistContext.Provider>
   );
 };
+
+
 export const useWishlist = () => {
   const context = useContext(WishlistContext);
   if (!context) throw new Error("useWishlist must be used inside WishlistProvider");
   return context;
 };
-
-
 
 
 
