@@ -1,15 +1,20 @@
 import { cardItemType } from "../types/prop-type";
 import './book-card.css';
+import { useWishlist } from "./wishlist-data";
+
 
 type BookCardProps = {
     book: cardItemType;
     addToCart:(book:cardItemType)=>void;
     removeFromCart:(Id:number)=>void;
     cart: cardItemType[];
+  
 }
 
 
 export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps) {
+  const {addToWishlist} = useWishlist()
+  
 
   const isAdded = cart.some(bookInCart => bookInCart.id === book.id )
   const handleButtonClick = () => {
@@ -32,6 +37,7 @@ export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps)
       <button onClick={handleButtonClick} className={`cart-button-color ${isAdded ? "remove" : "add"}`}>
          {isAdded ? "REMOVE FROM CART" : "ADD TO CART"}
       </button> 
+      <button onClick={()=>addToWishlist}>WishList</button>
       </div>
   );
 }
