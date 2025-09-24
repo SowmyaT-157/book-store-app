@@ -5,18 +5,29 @@ import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route} from 'react-router-dom';
 import SignUp from './components/register';
 import BookData from './components/book-list';
+import BookDetailPage from './components/book-details';
+import { WishlistProvider } from './components/wishlist-data';
+import { CartProvider } from './components/cartContext';
+import AuthProvider from './components/userAuthentication';
 
 function App() {
   return (
     <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<SignUp/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/book-store" element={<BookData/>}/>
-        </Routes>
+      <WishlistProvider>
+        <CartProvider>
+          <AuthProvider>
+            <Routes>
+                <Route path="/" element={<SignUp/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/book-store" element={<BookData/>}/>
+                <Route path="/book-details" element={<BookDetailPage books={[]}/>}/>
+            </Routes>
+          </AuthProvider>
+        </CartProvider>
         {/* <BookData /> */}
          {/* <Login/> */}
         {/* <SignUp/> */}
+      </WishlistProvider>
     </BrowserRouter>
   );
 }
