@@ -7,10 +7,11 @@ import "./wishlist.css";
 const Wishlist: React.FC = () => {
   const { wishlist } = useWishlist();
   const { cart, handleAddToCart, removeFromCart } = useCart();
-     const { users } = useAuth();
-    if (!users) {
-       return <p>Please log in to view your wishlist.</p>;
-    }
+    const { users } = useAuth();
+    console.log(users)
+    // if (!users) {
+    //   return <p>Please log in to view your wishlist.</p>;
+    // }
   return (
     <div>
        <div className="wishlist-page">
@@ -18,22 +19,21 @@ const Wishlist: React.FC = () => {
           <h1>Wishlist</h1>
           {users && (
             <div className="user-block">
-              <div className="user-name">
-                {users.name} 
-              </div>
-              <div className="user-email">{users.email}</div>
+                   User:{users.name} 
+              <div>Email:{users.email}</div>
             </div>
           )}
         </div>
          <div className="wishlist-grid">
           {wishlist.length === 0 ? (
-            <p>No books in wishlist yet</p>
+            <p>No books in wishlist</p>
           ) : (
             wishlist.map((book) => {
               const inCart = cart.some((c) => c.id === book.id);
               return (
                 <div key={book.id} className="wishlist-card">
-                  <img src={book.bookImage} alt={book.bookName} />
+                  <div className="list-inside"><img src={book.bookImage} alt={book.bookName} /></div>
+                  <div>
                   <h4>{book.bookName}</h4>
                   <p className="author">{book.author}</p>
                   <p className="price">₹{book.price}</p>
@@ -47,6 +47,7 @@ const Wishlist: React.FC = () => {
                       {inCart ? "Remove from Cart" : "Add to Cart"}
                     </button>
                   </div>
+                </div>
                 </div>
               );
             })
