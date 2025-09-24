@@ -24,7 +24,6 @@ export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps)
       addToCart(book);
     }
   };
-
   const handleDetails=()=>{
     navigate("/book-details", {state: {filterBook :book}})
   }
