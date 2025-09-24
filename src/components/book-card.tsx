@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { cardItemType } from "../types/prop-type";
 import './book-card.css';
 import { useWishlist } from "./wishlist-data";
@@ -15,6 +16,7 @@ type BookCardProps = {
 export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps) {
   const {addToWishlist} = useWishlist()
   const isAdded = cart.some(bookInCart => bookInCart.id === book.id )
+  const navigate = useNavigate();
   const handleButtonClick = () => {
     if (isAdded) {
       removeFromCart(book.id);
@@ -22,20 +24,27 @@ export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps)
       addToCart(book);
     }
   };
+
+  const handleDetails=()=>{
+    navigate("/book-details", {state: {filterBook :book}})
+  }
   return (
     <div className="card">
+      
       <div>
-        <img src={book.bookImage} alt={book.bookName} />
+        <img src={book.bookImage} alt={book.bookName} onClick={handleDetails} />
       </div>
       <div>
         <h2 className="card-title">{book.bookName}</h2>
         <p className="card-price">Price	₹: <span>{book.price}</span></p>
         <p className="card-author">Author: <span>{book.author}</span></p>
       </div>
-      <button onClick={handleButtonClick} className={`cart-button-color ${isAdded ? "remove" : "add"}`}>
-         {isAdded ? "REMOVE FROM CART" : "ADD TO CART"}
-      </button> 
-      <button onClick={()=>addToWishlist(book)}>WishList</button>
+      <div className="button-space">
+        <button onClick={handleButtonClick} className={`cart-button-color ${isAdded ? "remove" : "add"}`}>
+          {isAdded ? "REMOVE FROM CART" : "ADD TO CART"}
+        </button> 
+        <button className="wish-list-button"onClick={()=>addToWishlist(book)}>WishList</button>
+      </div>
       </div>
   );
 }
