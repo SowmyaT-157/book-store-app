@@ -21,6 +21,24 @@ h1{
 }
 
 .list-inside{
-    display: flex;
+    /* display: flex;
+    justify-content: space-between; */
+    margin: 28px;
+
+}
+.wishlist-card{
+    display:flex;
     justify-content: space-between;
+    font-family: cursive;
+    border-radius: 10px;
+   
+    
+}
+.remove{
+    width: 80px;
+    border-radius: 5px;
+}
+.cart{
+    width:80px;
+    border-radius: 5px;
 }

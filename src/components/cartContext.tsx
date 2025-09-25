@@ -8,6 +8,7 @@ export interface CartContextProps {
   incrementQuantity : (bookId: number) =>void;
   decrementQuantity : (bookId: number) => void;
   handleAddToCart: (book: cardItemType) => void;
+  isInCart: (bookid: number) => boolean
   cards:cardItemType[];
   setCards:Function
 }
@@ -53,9 +54,12 @@ const handleAddToCart = (book: cardItemType) => {
             previousCart.map(books => books.id === bookId ? { ...books, quantity: books.quantity - 1 } : books).filter(books => books.quantity > 0)
         );
     };
+   const isInCart =(bookid:number) =>{
+      return cart.some(item=>item.id === bookid)
+   }
 
   return (
-      <CartContext.Provider value={{ cart,handleAddToCart,removeFromCart, incrementQuantity,decrementQuantity,cards,setCards  }}>
+      <CartContext.Provider value={{ cart,handleAddToCart,removeFromCart, incrementQuantity,decrementQuantity,isInCart,cards,setCards  }}>
         {children}
       </CartContext.Provider>
     );
@@ -64,7 +68,7 @@ const handleAddToCart = (book: cardItemType) => {
   export const useCart = (): CartContextProps => {
     const context = useContext(CartContext);
     if (!context) {
-      throw new Error('useWishlist must be used within a Wishlist Provider');
+      throw new Error('useWishlist within a Wishlist Provider');
     }
     return context;
   };
