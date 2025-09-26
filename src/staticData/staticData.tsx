@@ -1,11 +1,6 @@
 
 // const REGISTERED_USERS = "registered_users"
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-}
+import { User } from "../types/UserDetails"
 export const users: User[] = [
   {
     id: '1',
@@ -51,7 +46,7 @@ export const users: User[] = [
   },
 
 ];
-export default User;
+export default users
 
 // const addNewUser = (user.UserDetails) =>{
 //   const userStr = localStorage.getItem(REGISTERED_USERS) || "[]";

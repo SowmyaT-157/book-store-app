@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import './login.css'
+import '../styles/login.css'
 import React from 'react';
 import { useEffect } from 'react';
-import {users} from './staticData';
+import { users } from '../staticData/staticData';
 import {useNavigate} from 'react-router-dom';
-import { useAuth } from './userAuthentication';
+import { useAuth } from '../context/Authentication';
 
 
 export const Login = () => {

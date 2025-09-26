@@ -1,5 +1,5 @@
 import React, { useContext, createContext, useState, ReactNode } from "react";
-import User from "./staticData";
+import {User} from "../types/UserDetails"
 
 type AuthContextType = {
     users: User | null;

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import "./search.css";
-import { cardItemType } from "../types/prop-type";
-import { BookCard } from "./book-card";
-import { Cart } from "./cart";
-import { useCart } from "./cartContext";
+import "../styles/search.css"
+import { cardItemType } from "../types/AddToCartProps";
+import { BookCard } from "./BookCard";
+import { Cart } from "./CartComponent";
 import { useRef,useEffect } from "react";
+import { useCart } from "../context/CartContextToHandleCaer";
 
 type searchProps = {
   books: cardItemType[];

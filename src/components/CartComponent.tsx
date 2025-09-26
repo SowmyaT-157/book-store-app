@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { cardItemType } from '../types/prop-type';
-import './cart.css'
+import { cardItemType } from '../types/AddToCartProps';
+import '../styles/cart.css'
 import { useNavigate } from 'react-router-dom';
 
 

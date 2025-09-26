@@ -1,6 +1,6 @@
 import { useContext,createContext, ReactNode, } from "react"
 import { useState } from "react"
-import { cardItemType } from "../types/prop-type"
+import { cardItemType } from "../types/AddToCartProps";
 
 export interface CartContextProps {
   cart: cardItemType[];

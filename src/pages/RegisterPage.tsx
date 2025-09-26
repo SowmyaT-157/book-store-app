@@ -1,7 +1,9 @@
-import './login.css'
+import '../styles/login.css'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {users,User} from './staticData';
+import { users} from '../staticData/staticData';
+import { User } from '../types/UserDetails';
+
 export const SignUp = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');

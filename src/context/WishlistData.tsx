@@ -1,6 +1,6 @@
 
 import React, { createContext, useContext, useState } from "react";
-import { cardItemType } from "../types/prop-type";
+import { cardItemType } from "../types/AddToCartProps";
 
 type WishlistContextType = {
   wishlist: cardItemType[];
@@ -33,8 +33,6 @@ export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     </WishlistContext.Provider>
   );
 };
-
-
 
 export const useWishlist = () => {
   const context = useContext(WishlistContext);

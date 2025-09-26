@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
-import Login from './components/login';
+import Login from './pages/LoginPage';
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route} from 'react-router-dom';
-import SignUp from './components/register';
-import BookData from './components/book-list';
-import BookDetailPage from './components/book-details';
-import { WishlistProvider } from './components/wishlist-data';
-import { CartProvider } from './components/cartContext';
-import AuthProvider from './components/userAuthentication';
-import Wishlist from './components/wishlist';
+import SignUp from './pages/RegisterPage'
+import BookData from './components/BookList';
+import BookDetailPage from './components/BookDetails';
+import { WishlistProvider } from './context/WishlistData';
+import { CartProvider } from './context/CartContextToHandleCaer';
+import AuthProvider from './context/Authentication';
+import Wishlist from './components/WishListComponent';
 
 function App() {
   return (
