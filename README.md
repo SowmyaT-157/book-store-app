@@ -17,6 +17,7 @@
     - [Clone:](#clone)
 - [Contributing](#contributing)
 - [Contact](#contact)
+- [Sample Output](#sample-output)
 
 ---
 ## Features
@@ -25,7 +26,10 @@
 - The book card have a `ADD TO CART` button, if user add that book that text will change into `REMOVE FROM CART`. based on that colors will be changed for easy recognize.
 - After user add the books into cart, cart has a quantity increase`+` , deecrease `-` ,and `remove` buttons are there, if user don't need that book user can remove that book in cart.
 - User add the books into cart automatically generate a total bill summary, it has a book price, and shipping charges. 
-
+- When app starts it show a `login page` user can enter the details for navigate to the book store, if user have no account they can register the with their details, it has a `register page`
+- In the book card has a wish list button if user like that book, they can add the `wishlist page` ,wish list has a seperate page that page contains a `user details` like name and email in header, it has add to cart button also.
+- If user can navigate to the book list it auto focus on a `search bar`. 
+- It has a another feature for user easy recognization, when user clicks a book image that will navigate to another page and that show a book details, title,book image, author, price, description and wishlist button, if user can add wish list and also a add to cart,it is flexible to use.
 ##  Tech Stack
 
 - Node Js
@@ -93,5 +97,8 @@
   - https://github.com/SowmyaT-157
 
 ---
+## Sample Output
+
+![asset](book-store-app/asset/output.png)
 
 

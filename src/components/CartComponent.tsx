@@ -1,7 +1,10 @@
 
 import React from 'react';
-import { cardItemType } from '../types/prop-type';
-import './cart.css'
+import { cardItemType } from '../types/AddToCartProps';
+import '../styles/cart.css'
+import { useNavigate } from 'react-router-dom';
+
+
 export type  CartProps = {
   cart: cardItemType[];
   incrementQuantity: (bookId: number) => void;
@@ -18,10 +21,11 @@ export const Cart: React.FC<CartProps> = ({
   const subtotal = cart.reduce((sum, book) => sum + book.price * book.quantity, 0);
   const shipping = cart.length > 0 ? 80 : 0;
   const total = subtotal + shipping;
-  
+  const navigate = useNavigate()
   return (
     <div className="cart-list">
       <div className='icon'><h1>Your Cart </h1>
+      <button className="wishlist-head"onClick={()=>navigate('/wishlist')}>wishlist</button>
       <div><h3>🛒{cart.length}</h3></div></div>
       {cart.length === 0 ? (
         <p>Cart is empty...choose a book</p>

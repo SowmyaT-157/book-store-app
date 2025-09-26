@@ -1,0 +1,44 @@
+.wishlist-page{
+    background-color: bisque;
+    
+}
+.wishlist-header{
+    background-color:gray;
+    display:flex;
+    width: 100%;
+}
+h1{
+    float: right;
+}
+.wishlist-grid{
+    width:30%;
+    height:40%;
+}
+.user-block{
+    margin-left: 78%;
+    margin-top: 9px;
+    font-family: cursive;
+}
+
+.list-inside{
+    /* display: flex;
+    justify-content: space-between; */
+    margin: 28px;
+
+}
+.wishlist-card{
+    display:flex;
+    justify-content: space-between;
+    font-family: cursive;
+    border-radius: 10px;
+   
+    
+}
+.remove{
+    width: 80px;
+    border-radius: 5px;
+}
+.cart{
+    width:80px;
+    border-radius: 5px;
+}
