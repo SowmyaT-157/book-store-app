@@ -10,7 +10,6 @@ type searchProps = {
   books: cardItemType[];
 };
 
-
 export const SearchBar = ({ books }: searchProps) => {
   const [search, setSearch] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -20,7 +19,6 @@ export const SearchBar = ({ books }: searchProps) => {
     }
   }, []);
   const{cart,handleAddToCart,removeFromCart,incrementQuantity,decrementQuantity} = useCart()
-
   const bookSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
@@ -57,6 +55,7 @@ export const SearchBar = ({ books }: searchProps) => {
             />
           ))}
         </div>
+        
         <div className="your-cart-space">
         <Cart cart={cart}
             removeFromCart={removeFromCart}
