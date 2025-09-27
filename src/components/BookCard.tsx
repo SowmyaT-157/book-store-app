@@ -12,7 +12,6 @@ type BookCardProps = {
   
 }
 
-
 export function BookCard({ book, addToCart,removeFromCart, cart}: BookCardProps) {
   const {addToWishlist} = useWishlist()
   const isAdded = cart.some(bookInCart => bookInCart.id === book.id )
