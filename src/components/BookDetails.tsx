@@ -4,36 +4,31 @@ import { useLocation } from 'react-router-dom'
 import { useCart } from '../context/CartContextToHandleCaer'
 import '../styles/book-details.css'
 import { useWishlist } from '../context/WishlistData'
+import { cardItemType } from '../types/AddToCartProps'
 
 
 const BookDetailsPage = () => {
   
   const location = useLocation()
-  const bookdetail = location.state.filterBook;
+  const bookdetail:cardItemType = location.state.filterBook;
 
-  const {handleAddToCart,removeFromCart,isInCart} =useCart()
-  const [isAdded,setIsAdded] = useState(isInCart(bookdetail.id))
+  const {handleAddToCart,removeFromCart,isInCart,cart} =useCart()
+  
 
   const {addToWishlist,removeFromWishlist,isInList} =useWishlist()
   const [isList,setIsList] = useState(isInList(bookdetail.id))
- 
-  useEffect(()=>{
-    setIsAdded(bookdetail.id)
-    setIsList(bookdetail.id)
-  },[isInCart,isInList])
+ const isAdded = cart.some(bookInCart => bookInCart.id === bookdetail.id )
 
-  const Handleclick = ()=>{
-    if(isAdded){
-    handleAddToCart(bookdetail)
-    setIsAdded(false)
 
-  }else{
-    
-    removeFromCart(bookdetail.id)
-    setIsAdded(true)
-  }
-  console.log(isAdded);
-  }
+   const handleButtonClick = () => {
+    if (isAdded) {
+      console.log(isAdded);
+      removeFromCart(bookdetail.id);
+    } else {
+      console.log(isAdded)
+      handleAddToCart(bookdetail);
+    }
+  };
 
 
   // const HandleList = () =>{
@@ -73,14 +68,15 @@ const BookDetailsPage = () => {
               <p className='quantity'>Quantity:{bookdetail.quantity}</p>
               <button className="inc"onClick={()=>incrementQuantity(bookdetail.id)}>+</button>
           </div><br /> */}
-           <div className='cart-buttons'>
-            <button className = 'cart' onClick={Handleclick}>{isAdded ?  "Add to cart" : "Remove from cart"}</button>
-            <button className='wish'onClick={()=>addToWishlist(bookdetail)}>Wishlist</button>
-          </div>
+          <div className="button-space">
+        <button onClick={handleButtonClick} className={`cart-button-color ${isAdded ? "remove" : "add"}`}>
+          {isAdded ? "REMOVE FROM CART" : "ADD TO CART"}
+        </button> 
+        <button className="wish-list-button"onClick={()=>addToWishlist(bookdetail)}>WishList</button>
+      </div> 
        </div> 
           </div>
         </div>
-     
   )
 }
 export default BookDetailsPage
