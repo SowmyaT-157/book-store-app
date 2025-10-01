@@ -3,7 +3,7 @@
 }
 .book-img{
     height: 70%;
-    width:180%;
+    width:120%;
     border-radius: 10px;
     margin: 10%;
     margin-top: 10%;
@@ -35,15 +35,7 @@
      text-align: center;
 } */
 
-.quantity-button{
-    display: flex;
-    gap: 40px;
-    /* border:2px solid black; */
-    margin-left:40%;
-    
-    
-    
-}
+
 .desc{
     margin-left: 20%;
 }
@@ -71,5 +63,8 @@
 }
 .dec{
     height: fit-content;
+}
+.button-space{
+    margin-left: 35%;
 }
 
