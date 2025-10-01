@@ -41,7 +41,7 @@ export const SignUp = () => {
   };
 
    return(
-    <div className='main'>
+    <div className='main'data-test-id="SignUp-form">
         <h3>Books</h3>
         <div className='form'>
             <h3>Sign Up</h3>
@@ -60,7 +60,6 @@ export const SignUp = () => {
             <button className="register-button"onClick={handleRegister}>Sign Up</button>
              {error && <p className="error-text">{error}</p>}
             <p>Already have an account <a href="/login">SignIn</a></p>
-             
         </div>
     </div>
    )
