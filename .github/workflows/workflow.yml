@@ -1,0 +1,36 @@
+name: Simple book store application
+
+on:
+  push:
+   branches:
+     - main
+     - feature/testing
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install dependencies
+        run: npm install
+
+      - name: build the application
+        run: npm run build
+
+      - name: build image
+        run: docker build -t sowmyasowmi157/book-store .
+
+      - name: display image
+        run: docker images
+
+      - name: display the all containers
+        run: docker ps -a 
+
+      - name: login to docker hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_USERNAME }} 
+          password: ${{ secrets.Docker_TOKEN }}
+
+      - name: push the image to docker hub
+        run: docker push sowmyasowmi157/book-store
